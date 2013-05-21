@@ -1,0 +1,81 @@
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	background-color: black;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Verdana";
+	font-size: 1.3rem;
+	color: rgb(230, 230, 230);
+	margin: 0;
+	padding: 1rem;
+}
+
+h1, h2, h3, h4 {
+	margin: 0 0 .3rem 0;
+	padding: 0;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+	background-color: white;
+	color: rgb(30, 30, 30);
+	padding: .8rem 1.2rem;
+	border-radius: 1rem;
+}
+
+#matches #filter {
+	/*margin: 1rem;*/
+	margin-bottom: 1rem;
+	overflow: hidden;
+}
+
+#matches #filter a {
+	text-align: center;
+	float: right;
+	width: 49%;
+}
+
+#matches #filter a:first-child {
+	float: left;
+}
+
+#matches ul {
+	/*margin: .5rem;*/
+}
+
+#matches li + li {
+	margin-top: .5rem;
+}
+
+#matches li a {
+}
+
+#matches li span {
+	font-weight: bold;
+}
+
+.red {
+	color: rgb(219, 79, 74);
+}
+
+.green {
+	color: rgb(93, 184, 93);
+}
+
+.blue {
+	color: rgb(13, 143, 208);
+}
+
