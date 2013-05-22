@@ -17,21 +17,22 @@ var pg = {
 	},
 
 	getPicture: function() {
-		navigator.camera.getPicture(function() {
+		navigator.camera.getPicture(function(imageData) {
+			// success
+			//$(this).find("div").append("img").attr("src", "data:image/jpeg;base64," + imageData);
+			$("#picture").attr("src", "data:image/jpeg;base64," + imageData);
 		}, function() {
-			// onFail,
+			// error
 		}, {
+			// options
 			quality: 50,
 			destinationType: Camera.DestinationType.DATA_URL
 		});
-
- 		var image = $(this).find("div").append("img").attr("src", "data:image/jpeg;base64," + imageData);
 	},
 
 	getMyPosition: function() {
-		console.log("getMyPosition");
-		console.log(navigator.geolocation.getCurrentPosition);
 		navigator.geolocation.getCurrentPosition(function(position) {
+			console.log(s)
 			var s = "Latitude: "          + position.coords.latitude + '<br />' +
 					"Longitude: "         + position.coords.longitude + '<br />' +
 					"Altitude: "          + position.coords.altitude + '<br />' +
