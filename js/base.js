@@ -10,6 +10,10 @@ var pg = {
 			return false;
 		});
 		
+		$("#getPicture").on("click", function() {
+			$(this).find("div").html(pg.getPicture());
+			return false;
+		});
 	},
 
 	getPicture: function() {
