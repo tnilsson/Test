@@ -36,46 +36,7 @@ a {
 	border-radius: 1rem;
 }
 
-#matches #filter {
-	/*margin: 1rem;*/
-	margin-bottom: 1rem;
-	overflow: hidden;
-}
-
-#matches #filter a {
-	text-align: center;
-	float: right;
-	width: 49%;
-}
-
-#matches #filter a:first-child {
-	float: left;
-}
-
-#matches ul {
-	/*margin: .5rem;*/
-}
-
-#matches li + li {
+li + li {
 	margin-top: .5rem;
-}
-
-#matches li a {
-}
-
-#matches li span {
-	font-weight: bold;
-}
-
-.red {
-	color: rgb(219, 79, 74);
-}
-
-.green {
-	color: rgb(93, 184, 93);
-}
-
-.blue {
-	color: rgb(13, 143, 208);
 }
 

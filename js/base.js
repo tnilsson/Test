@@ -9,6 +9,19 @@ var pg = {
 			$(this).find("div").html(pg.getMyPosition());
 			return false;
 		});
+		
+	},
+
+	getPicture: function() {
+		navigator.camera.getPicture(function() {
+		}, function() {
+			// onFail,
+		}, {
+			quality: 50,
+			destinationType: Camera.DestinationType.DATA_URL
+		});
+
+ 		var image = $(this).find("div").append("img").attr("src", "data:image/jpeg;base64," + imageData);
 	},
 
 	getMyPosition: function() {
@@ -29,7 +42,7 @@ var pg = {
 			console.log(error);
 			return error;
 		}, {
-			enableHighAccuracy: true;
+			enableHighAccuracy: true
 		});
 	}
 }
