@@ -5,15 +5,13 @@
 
 var pg = {
 	init: function() {
-		alert("init");
 		$("#getMyPosition").on("click", function() {
-			alert($(this).find("div"));
-			$(this).find("div").html(pg.getMyPosition());
+			$("#getMyPosition div").text(pg.getMyPosition());
 			return false;
 		});
 		
 		$("#getPicture").on("click", function() {
-			$(this).find("div").html(pg.getPicture());
+			$("#getPicture div").text(pg.getPicture());
 			return false;
 		});
 	},
@@ -23,10 +21,10 @@ var pg = {
 			// success
 			//$(this).find("div").append("img").attr("src", "data:image/jpeg;base64," + imageData);
 			alert(imageData);
-			$("#picture").attr("src", "data:image/jpeg;base64," + imageData);
+			return "data:image/jpeg;base64," + imageData;
 		}, function(error) {
-			alert(error);
 			// error
+			alert(error);
 		}, {
 			// options
 			quality: 50,
@@ -36,13 +34,13 @@ var pg = {
 
 	getMyPosition: function() {
 		navigator.geolocation.getCurrentPosition(function(position) {
-			var s = "Latitude: "          + position.coords.latitude + '<br />' +
-					"Longitude: "         + position.coords.longitude + '<br />' +
-					"Altitude: "          + position.coords.altitude + '<br />' +
-					"Accuracy: "          + position.coords.accuracy  + '<br />' +
-					"Altitude Accuracy: " + position.coords.altitudeAccuracy + '<br />' +
-					"Heading: "           + position.coords.heading + '<br />' +
-					"Speed: "             + position.coords.speed + '<br />' +
+			var s = "Latitude: "          + position.coords.latitude + ', ' +
+					"Longitude: "         + position.coords.longitude + ', ' +
+					"Altitude: "          + position.coords.altitude + ', ' +
+					"Accuracy: "          + position.coords.accuracy  + ', ' +
+					"Altitude Accuracy: " + position.coords.altitudeAccuracy + ', ' +
+					"Heading: "           + position.coords.heading + ', ' +
+					"Speed: "             + position.coords.speed + ', ' +
 					"Timestamp: "         + position.timestamp;
 			return s;
 		}, function(error) {
