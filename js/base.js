@@ -7,6 +7,7 @@ var pg = {
 	init: function() {
 		alert("init");
 		$("#getMyPosition").on("click", function() {
+			alert($(this).find("div"));
 			$(this).find("div").html(pg.getMyPosition());
 			return false;
 		});
@@ -35,7 +36,6 @@ var pg = {
 
 	getMyPosition: function() {
 		navigator.geolocation.getCurrentPosition(function(position) {
-			alert(s);
 			var s = "Latitude: "          + position.coords.latitude + '<br />' +
 					"Longitude: "         + position.coords.longitude + '<br />' +
 					"Altitude: "          + position.coords.altitude + '<br />' +
@@ -44,7 +44,6 @@ var pg = {
 					"Heading: "           + position.coords.heading + '<br />' +
 					"Speed: "             + position.coords.speed + '<br />' +
 					"Timestamp: "         + position.timestamp;
-			alert(s);
 			return s;
 		}, function(error) {
 			alert(error);
