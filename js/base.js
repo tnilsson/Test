@@ -5,6 +5,7 @@
 
 var pg = {
 	init: function() {
+		alert("init");
 		$("#getMyPosition").on("click", function() {
 			$(this).find("div").html(pg.getMyPosition());
 			return false;
@@ -20,8 +21,10 @@ var pg = {
 		navigator.camera.getPicture(function(imageData) {
 			// success
 			//$(this).find("div").append("img").attr("src", "data:image/jpeg;base64," + imageData);
+			alert(imageData);
 			$("#picture").attr("src", "data:image/jpeg;base64," + imageData);
-		}, function() {
+		}, function(error) {
+			alert(error);
 			// error
 		}, {
 			// options
@@ -32,7 +35,7 @@ var pg = {
 
 	getMyPosition: function() {
 		navigator.geolocation.getCurrentPosition(function(position) {
-			console.log(s)
+			alert(s);
 			var s = "Latitude: "          + position.coords.latitude + '<br />' +
 					"Longitude: "         + position.coords.longitude + '<br />' +
 					"Altitude: "          + position.coords.altitude + '<br />' +
@@ -41,10 +44,10 @@ var pg = {
 					"Heading: "           + position.coords.heading + '<br />' +
 					"Speed: "             + position.coords.speed + '<br />' +
 					"Timestamp: "         + position.timestamp;
-			console.log(s);
+			alert(s);
 			return s;
 		}, function(error) {
-			console.log(error);
+			alert(error);
 			return error;
 		}, {
 			enableHighAccuracy: true
